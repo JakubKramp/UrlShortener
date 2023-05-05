@@ -22,7 +22,6 @@ class Url(models.Model):
     original_url = models.URLField(blank=False, null=False, unique=True)
     short_url = models.SlugField(default=get_short_url(), unique=True)
     created_date = models.DateTimeField(auto_now_add=True)
-    #owner = models.ForeignKey('users.User', related_name='urls', on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self) -> str:
         return f"{self.original_url} shortened to {self.short_url}"
